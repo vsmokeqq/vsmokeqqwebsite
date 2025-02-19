@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./backverska.css">
+    <title>VSMOKEQQ</title>
+</head>
+<body>
+    <div class = "background">
+    <div id = "logo"><img class = "logo"src = "logo.jpeg"></img></div>
+    <div id = "shop1">
+        <div id = "item1"><img id = "tovar" class = "item1" src = "hoodie.jpg" data-hover = "hoodie11.jpg" data-original = "hoodie.jpg"></img><p class = "nameitem">"my bloody angel" hoodie</p><div id = "cena"><p id = "price"> 4,650 р.</p><p id = "lastprice">5,000 р.</p></div></div>
+        <div id = "item2"><img id = "tovar" class = "item2" src = "hoodie2.jpg" data-hover = "hoodie22.jpg" data-original = "hoodie2.jpg"></img><p class = "nameitem">"biohazard" hoodie</p><div id = "cena"><p id = "price"> 4,500 р.</p><p id = "lastprice">5,000 р.</p></div></div>
+        <div id = "item3"><img id = "tovar" class = "item3" src = "ziphoodie.JPEG" data-hover = "ziphoodie11.jpg" data-original = "ziphoodie.JPEG"></img><p class = "nameitem">"never be happy" zip hoodie</p><div id = "cena"><p id = "price"> 5,500 р.</p><p id = "lastprice">6,000 р.</p></div></div>
+    </div>
+    <div id = "shop2">
+        <div id = "item4"><img id = "tovar" class = "item4" src = "egoist.JPEG" data-hover = "egoist1.JPEG" data-original = "egoist.JPEG"></img><p class = "nameitem">"egoist" t-shirt</p><div id = "cena"><p id = "price"> 3,000 р.</p><p id = "lastprice">3,500 р.</p></div></div>
+        <div id = "item5"><img id = "tovar" class = "item5" src = "sex.JPEG" data-hover = "sex1.jpg" data-original = "sex.JPEG"></img><p class = "nameitem">"dopamine surge" t-shirt</p><div id = "cena"><p id = "price"> 2,300 р.</p><p id = "lastprice">2,500 р.</p></div></div>
+        <div id = "item6"><img id = "tovar" class = "item6" src = "risen.jpg" data-hover = "risen1.jpg" data-original = "risen.jpg"></img><p class = "nameitem">"no nothing" t-shirt</p><div id = "cena"><p id = "price"> 2,300 р.</p><p id = "lastprice">2,500 р.</p></div></div>
+    </div>
+    <div class = "bottomheader"> © 2025 VSMOKEQQ<div class = "links"><a href = "https://t.me/vsmokeqq"><img class = "tg" src = "тг.jpg"></img></a><a href = "https://vk.com/vsmokeqqstore"><img class = "vk" src = "вк.png"></img></a><a href = "instgram.com/@vsmokeqq"><img class = "ig" src = "ig.svg"></img></a></div></div>
+    </div>
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("[id^='tovar']");
+    
+    images.forEach(img => {
+        img.setAttribute("data-original", img.src);
+        
+        img.addEventListener("mouseenter", function () {
+            this.style.transition = "opacity 0.5s ease";
+            this.style.opacity = "0";
+            setTimeout(() => {
+                this.src = this.getAttribute("data-hover");
+                this.style.opacity = "1";
+            }, 1000);
+        });
+
+        img.addEventListener("mouseleave", function () {
+            this.style.transition = "opacity 0.5s ease";
+            this.style.opacity = "0";
+            setTimeout(() => {
+                this.src = this.getAttribute("data-original");
+                this.style.opacity = "1";
+            }, 1000);
+        });
+    });
+});
+
+</script>
+<script>
+document.getElementById("item1").addEventListener("click", function() {                                                     // 1-ST ITEM
+    let modal = document.createElement("div");
+    modal.id = "modal";
+    modal.innerHTML = `
+        <div class="allcontent">
+            <div class="funcbuttons">
+                <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+            </div>
+            <div class = "content">
+                <div class = "corusel"><img class = "coruselimg" src = "hoodie11.jpg"></img></div>
+                <div class = "things">
+                <div class = "itemtitle"><p>"my bloody angel" hoodie</p></div>
+                <div class = "itemprice"><p id = "itemprice"> 4,650 р.</p><p id = "itemlastprice">5,000 р.</p></div>
+                <div class = "size"><p>Размер:</p></div>
+                    <div class="dropdown">
+                        <button class="dropdown-button" id="dropdownButton" onclick="toggleDropdown()">XL</button>
+                        <div class="dropdown-content" id="sizeDropdown">
+                            <a href="#" onclick="selectSize(event, 'S')">S</a>
+                            <a href="#" onclick="selectSize(event, 'M')">M</a>
+                            <a href="#" onclick="selectSize(event, 'L')">L</a>
+                            <a href="#" onclick="selectSize(event, 'XL')">XL</a>
+                        </div>
+                    </div>
+                <div class = "korzina">
+                    <button id = "korz">Добавить в корзину</button>
+                </div>
+                <div class = "info"><p> 
+                       "my bloody angel" hoodie<br>
+                        Состав из чистого хлопка гарантирует высокое качество.<br>
+                        Принты спереди - машинная вышивка.<br>
+                        Принты сзади - машинная вышивка + высококачественная шелкография.<br>
+                        Унисекс.<br>
+                        Крой оверсайз.<br>
+                        Размерная сетка : S - XL<br>
+                        Предзаказ.<br>
+                        Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                        кроме Украины. (писать в лс сообщества)</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    requestAnimationFrame(() => {
+        modal.classList.add("show");
+    });
+    
+    function closeModal() {
+        modal.classList.remove("show");
+        setTimeout(() => document.body.removeChild(modal), 1000);
+    }
+    
+    modal.querySelector(".krest").addEventListener("click", function(event) {
+        event.stopPropagation();
+        closeModal();
+    });
+    modal.querySelector(".close").addEventListener("click", function(event) {
+        event.stopPropagation();
+        closeModal();
+    });
+});
+</script>
+<script>
+    document.getElementById("item2").addEventListener("click", function() {                                                     // 2-ND ITEM
+        let modal = document.createElement("div");
+        modal.id = "modal";
+        modal.innerHTML = `
+            <div class="allcontent">
+                <div class="funcbuttons">
+                    <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+                </div>
+                <div class = "content">
+                    <div class = "corusel"><img class = "coruselimg" src = "hoodie22.jpg"></img></div>
+                    <div class = "things">
+                    <div class = "itemtitle"><p>"biohazard" hoodie</p></div>
+                    <div class = "itemprice"><p id = "itemprice"> 4,500 р.</p><p id = "itemlastprice">5,000 р.</p></div>
+                    <div class = "size"><p>Размер:</p></div>
+                        <div class="dropdown">
+                            <button class="dropdown-button" id="dropdownButton" onclick="toggleDropdown()">XL</button>
+                            <div class="dropdown-content" id="sizeDropdown">
+                                <a href="#" onclick="selectSize(event, 'S')">S</a>
+                                <a href="#" onclick="selectSize(event, 'M')">M</a>
+                                <a href="#" onclick="selectSize(event, 'L')">L</a>
+                                <a href="#" onclick="selectSize(event, 'XL')">XL</a>
+                            </div>
+                        </div>
+                    <div class = "korzina">
+                        <button id = "korz">Добавить в корзину</button>
+                    </div>
+                    <div class = "info"><p>
+                            "biohazard" hoodie<br>
+                            Состав из чистого хлопка гарантирует высокое качество.<br>
+                            Все принты - машинная вышивка.<br>
+                            Унисекс.<br>
+                            Крой оверсайз.<br>
+                            Размерная сетка : S - XL<br>
+                            Предзаказ.<br>
+                            Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                            кроме Украины. (писать в лс сообщества)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+        });
+        
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => document.body.removeChild(modal), 1000);
+        }
+        
+        modal.querySelector(".krest").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+        modal.querySelector(".close").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+    });
+</script>
+<script>
+    document.getElementById("item3").addEventListener("click", function() {                                                     // 3-RD ITEM
+        let modal = document.createElement("div");
+        modal.id = "modal";
+        modal.innerHTML = `
+            <div class="allcontent">
+                <div class="funcbuttons">
+                    <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+                </div>
+                <div class = "content">
+                    <div class = "corusel"><img class = "coruselimg" src = "ziphoodie11.jpg"></img></div>
+                    <div class = "things">
+                    <div class = "itemtitle"><p>"never be happy" zip hoodie</p></div>
+                    <div class = "itemprice"><p id = "itemprice"> 5,500 р.</p><p id = "itemlastprice">6,000 р.</p></div>
+                    <div class = "size"><p>Размер:</p></div>
+                        <div class="dropdown">
+                            <button class="dropdown-button" id="dropdownButton" onclick="toggleDropdown()">XL</button>
+                            <div class="dropdown-content" id="sizeDropdown">
+                                <a href="#" onclick="selectSize(event, 'S')">S</a>
+                                <a href="#" onclick="selectSize(event, 'M')">M</a>
+                                <a href="#" onclick="selectSize(event, 'L')">L</a>
+                                <a href="#" onclick="selectSize(event, 'XL')">XL</a>
+                            </div>
+                        </div>
+                    <div class = "korzina">
+                        <button id = "korz">Добавить в корзину</button>
+                    </div>
+                    <div class = "info"><p> 
+                           "never be happy" zip hoodie<br>
+                            Состав из чистого хлопка гарантирует высокое качество.<br>
+                            Все принты - машинная вышивка.<br>
+                            Унисекс.<br>
+                            Крой оверсайз.<br>
+                            Размерная сетка : S - XL<br>
+                            Предзаказ.<br>
+                            Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                            кроме Украины. (писать в лс сообщества)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+        });
+        
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => document.body.removeChild(modal), 1000);
+        }
+        
+        modal.querySelector(".krest").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+        modal.querySelector(".close").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+    });
+</script>
+<script>
+    document.getElementById("item4").addEventListener("click", function() {                                                     // 4-RD ITEM
+        let modal = document.createElement("div");
+        modal.id = "modal";
+        modal.innerHTML = `
+            <div class="allcontent">
+                <div class="funcbuttons">
+                    <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+                </div>
+                <div class = "content">
+                    <div class = "corusel"><img class = "coruselimg" src = "egoist1.JPEG"></img></div>
+                    <div class = "things">
+                    <div class = "itemtitle"><p>"egoist" t-shirt</p></div>
+                    <div class = "itemprice"><p id = "itemprice"> 3,000 р.</p><p id = "itemlastprice">3,500 р.</p></div>
+                    <div class = "size"><p>Размер:</p></div>
+                        <div class="dropdown">
+                            <button class="dropdown-button" id="dropdownButton" onclick="toggleDropdown()">XL</button>
+                            <div class="dropdown-content" id="sizeDropdown">
+                                <a href="#" onclick="selectSize(event, 'S')">S</a>
+                                <a href="#" onclick="selectSize(event, 'M')">M</a>
+                                <a href="#" onclick="selectSize(event, 'L')">L</a>
+                                <a href="#" onclick="selectSize(event, 'XL')">XL</a>
+                            </div>
+                        </div>
+                    <div class = "korzina">
+                        <button id = "korz">Добавить в корзину</button>
+                    </div>
+                    <div class = "info"><p> 
+                           "egoist" t-shirt<br>
+                            Состав из чистого хлопка гарантирует высокое качество.<br>
+                            Все принты - машинная вышивка.<br>
+                            Унисекс.<br>
+                            Крой оверсайз.<br>
+                            Размерная сетка : S - XL<br>
+                            Предзаказ.<br>
+                            Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                            кроме Украины. (писать в лс сообщества)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+        });
+        
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => document.body.removeChild(modal), 1000);
+        }
+        
+        modal.querySelector(".krest").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+        modal.querySelector(".close").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+    });
+</script>
+<script>
+    document.getElementById("item5").addEventListener("click", function() {                                                     // 5-TH ITEM
+        let modal = document.createElement("div");
+        modal.id = "modal";
+        modal.innerHTML = `
+            <div class="allcontent">
+                <div class="funcbuttons">
+                    <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+                </div>
+                <div class = "content">
+                    <div class = "corusel"><img class = "coruselimg" src = "sex1.jpg"></img></div>
+                    <div class = "things">
+                    <div class = "itemtitle"><p>"dopamine surge" t-shirt</p></div>
+                    <div class = "itemprice"><p id = "itemprice"> 2,300 р.</p><p id = "itemlastprice">2,500 р.</p></div>
+                    <div class = "size"><p>Размер:</p></div>
+                        <div class="dropdown">
+                            <button class="dropdown-button" id="dropdownButton" onclick="toggleDropdown()">XL</button>
+                            <div class="dropdown-content" id="sizeDropdown">
+                                <a href="#" onclick="selectSize(event, 'S')">S</a>
+                                <a href="#" onclick="selectSize(event, 'M')">M</a>
+                                <a href="#" onclick="selectSize(event, 'L')">L</a>
+                                <a href="#" onclick="selectSize(event, 'XL')">XL</a>
+                            </div>
+                        </div>
+                    <div class = "korzina">
+                        <button id = "korz">Добавить в корзину</button>
+                    </div>
+                    <div class = "info"><p> 
+                           "dopamine surge" t-shirt<br>
+                            Состав из чистого хлопка гарантирует высокое качество.<br>
+                            Принт спереди - машинная вышивка + высококачественная шелкография.<br>
+                            Принт на рукаве - патч с машинной вышивкой.<br>
+                            Унисекс.<br>
+                            Крой оверсайз.<br>
+                            Размерная сетка : S - XL<br>
+                            Предзаказ.<br>
+                            Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                            кроме Украины. (писать в лс сообщества)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+        });
+        
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => document.body.removeChild(modal), 1000);
+        }
+        
+        modal.querySelector(".krest").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+        modal.querySelector(".close").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+    });
+</script>
+<script>
+    document.getElementById("item6").addEventListener("click", function() {                                                     // 6-X ITEM
+        let modal = document.createElement("div");
+        modal.id = "modal";
+        modal.innerHTML = `
+            <div class="allcontent">
+                <div class="funcbuttons">
+                    <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+                </div>
+                <div class = "content">
+                    <div class = "corusel"><img class = "coruselimg" src = "risen1.jpg"></img></div>
+                    <div class = "things">
+                    <div class = "itemtitle"><p>"no nothing" t-shirt</p></div>
+                    <div class = "itemprice"><p id = "itemprice"> 2,300 р.</p><p id = "itemlastprice">2,500 р.</p></div>
+                    <div class = "size"><p>Размер:</p></div>
+                        <div class="dropdown">
+                            <button class="dropdown-button" id="dropdownButton" onclick="toggleDropdown()">XL</button>
+                            <div class="dropdown-content" id="sizeDropdown">
+                                <a href="#" onclick="selectSize(event, 'S')">S</a>
+                                <a href="#" onclick="selectSize(event, 'M')">M</a>
+                                <a href="#" onclick="selectSize(event, 'L')">L</a>
+                                <a href="#" onclick="selectSize(event, 'XL')">XL</a>
+                            </div>
+                        </div>
+                    <div class = "korzina">
+                        <button id = "korz">Добавить в корзину</button>
+                    </div>
+                    <div class = "info"><p> 
+                           "no nothing" t-shirt<br>
+                            Состав из чистого хлопка гарантирует высокое качество.<br>
+                            Принт спереди - машинная вышивкка.<br>
+                            Принт сзади - высококачественная шелкография.<br>
+                            Унисекс.<br>
+                            Крой оверсайз.<br>
+                            Размерная сетка : S - XL<br>
+                            Предзаказ.<br>
+                            Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                            кроме Украины. (писать в лс сообщества)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+        });
+        
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => document.body.removeChild(modal), 1000);
+        }
+        
+        modal.querySelector(".krest").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+        modal.querySelector(".close").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+    });
+    </script>
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById("sizeDropdown");
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+    
+    function selectSize(event, size) {
+        event.preventDefault();
+        document.getElementById("dropdownButton").textContent = size;
+        document.getElementById("sizeDropdown").style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-button')) {
+            document.getElementById("sizeDropdown").style.display = "none";
+        }
+    }
+</script>
+<script>
+    document.getElementById("korz").addEventListener("click", function() {                                                     // KORZINA
+        let modal = document.createElement("div");
+        modal.id = "korziina";
+        modal.innerHTML = `
+            <div class="allcontent">
+                <div class="funcbuttons">
+                    <p class = "close">↤ Все товары</p><img class="krest" src="крестик.svg">
+                </div>
+                <div class = "content">
+                    <div class = "corusel"><img class = "coruselimg" src = "hoodie11.jpg"></img></div>
+                    <div class = "things">
+                    <div class = "itemtitle"><p>"my bloody angel" hoodie</p></div>
+                    <div class = "itemprice"><p id = "itemprice"> 4,650 р.</p><p id = "itemlastprice">5,000 р.</p></div>
+                    <div class = "info"><p> 
+                           "my bloody angel" hoodie<br>
+                            Состав из чистого хлопка гарантирует высокое качество.<br>
+                            Принты спереди - машинная вышивка.<br>
+                            Принты сзади - машинная вышивка + высококачественная шелкография.<br>
+                            Унисекс.<br>
+                            Крой оверсайз.<br>
+                            Размерная сетка : S - XL<br>
+                            Предзаказ.<br>
+                            Доставка в другие страны так же доступна(в том числе ЛНР/ДНР),<br>
+                            кроме Украины. (писать в лс сообщества)</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+        });
+        
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => document.body.removeChild(modal), 1000);
+        }
+        
+        modal.querySelector(".krest").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+        modal.querySelector(".close").addEventListener("click", function(event) {
+            event.stopPropagation();
+            closeModal();
+        });
+    });
+    </script>
+</html>
